@@ -1,0 +1,17 @@
+<!--o que interessa é este name="xxxx" para o meteor encontrar este ficheiro-->
+<template name="postItem">
+  <div class="post">
+    <div class="post-content">
+      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+      <p>
+<!--se o post for postado por essa pessoa "onwPost" que é testado no post_item.js, vai aparecer o botão "edit" que redireciona para a página para alterar post-->
+        
+        submitted by {{author}},
+        <a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a>
+        {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
+      </p>
+    </div>
+    <!--botão de comentário e manda para o template postPage-->
+    <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Comentar</a>
+  </div>
+</template>
